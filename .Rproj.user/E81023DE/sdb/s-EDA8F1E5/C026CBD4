@@ -1,0 +1,16 @@
+{
+    "contents" : "\nlibrary(shiny)\n\nshinyUI(fluidPage(\n  withTags(div(class='row-fluid',div(class='span6',textInput(\"xaxis\",label=\"X-axis\",value=\"I am x-axis\")),div(class='span6',textInput(\"title\",label=\"Title\",value=\"I am title.Just Edit me\")))    \n  ),\n  selectInput(inputId = \"n_breaks\",\n              label = \"Number of bins in histogram (approximate):\",\n              choices = c(5, 10, 25, 50),\n              selected = 25),\n  \n  checkboxInput(inputId = \"individual_obs\",\n                label = strong(\"Show individual observations\"),\n                value = FALSE),\n  \n  checkboxInput(inputId = \"density\",\n                label = strong(\"Show density estimate\"),\n                value = FALSE),\n  \n  plotOutput(outputId = \"plot\", height = \"200px\"),\n  \n  # Display this only if checkboxinput,density is checked\n  conditionalPanel(condition = \"input.density == true\",\n                   sliderInput(inputId = \"bw_adjust\",\n                               label = \"Bandwidth adjustment:\",\n                               min = 0.2, max = 2, value = 1, step = 0.2)\n  )\n))\n",
+    "created" : 1414292389981.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4078274986",
+    "id" : "C026CBD4",
+    "lastKnownWriteTime" : 1414300441,
+    "path" : "~/shinytest/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}
